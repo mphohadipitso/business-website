@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOL-VOLT SA | Powering Your Future</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A00;
+            --secondary: #0039A6;
+            --secondary-light: #0048D8;
+            --dark: #1A1A2E;
+            --dark-light: #2D2D44;
+            --light: #F8F9FF;
+            --gray: #6C757D;
+            --success: #00C853;
+            --warning: #FFD600;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGkSURBVHgB7Zk7TsNAEIaHcGMDl5gDcAn8cAJOQEmfoIKGK0CKfN0kSG7BISBFSIkbIFwCKYKQTPa5vF0W4ZH+8i7srd/Wk8fjWRiGYRiGYRiGYf4LcDk4IUFICk5IEJKCExKEpOCEBCEpOCFBSApOSBCSghMSRLhB3gG+kCIAYApOgJQO+AI3TnmJQVoAi8JYo+VAT9fgxmdykFeAKRhJWQ4MQk4TNGK6yBQj5BmgC45UmZ0gT2DkJJI8I7BDF4wX+cEiQ0VeUGRckmeylRSckCAkhcS9yCk4Uw/Zg3+2yArcyLVzth4yD50wp4q8IYnl1oHcYqZy1bKX5eyY6kZSNe46O3rtBruLQ3KGeUfY4kjNpSe3nIjsxwWXJKv9ZID7lkK+0WNhV4C1cnIh6z5bJNM3cUZ6S1LpdlCy6T1cVhxekq6E0ytZ3hIh+94ji33d0tL3dXwv5BXlukTW+ZJs4Qgt0gV/RDQtpD+8JElKShFq6Hk0kpQ4EfogI40qXHl9CDlaOUlKghfx4Rqsg9lHf7aZQwFdq3/CHv8ATsp0Q7G9HAAAAABJRU5ErkJggg==');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--dark);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            padding: 10px 0;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            margin-left: 40px;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 57, 166, 0.9) 0%, rgba(255, 107, 53, 0.7) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--warning);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .product-showcase {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .showcase-item {
+            position: absolute;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .showcase-item:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 200px;
+        }
+
+        .showcase-item:nth-child(2) {
+            top: 30%;
+            right: 10%;
+            width: 180px;
+        }
+
+        .showcase-item:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            width: 220px;
+        }
+
+        .showcase-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .subtitle {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Products Section */
+        .products-section {
+            background: var(--light);
+        }
+
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .category-btn {
+            background: white;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .category-btn i {
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card .card-header {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .product-card .card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            background-color: #f5f5f5;
+        }
+
+        .product-card:hover .card-header img {
+            transform: scale(1.05);
+        }
+
+        .product-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .product-specs {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .product-specs li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .product-specs li i {
+            color: var(--success);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .product-actions .certification-badge {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-button:hover {
+            background: var(--secondary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features-section {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 28px;
+            color: var(--warning);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background: var(--light);
+        }
+
+        .gallery-description {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-light);
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-description p {
+            margin-bottom: 20px;
+        }
+
+        .gallery-description strong {
+            color: var(--secondary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 250px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--light) 0%, #f0f2ff 100%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
+        .contact-details p {
+            color: var(--gray);
+        }
+
+        .contact-form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content {
+                gap: 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container,
+            .container,
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-description {
+                padding: 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-column h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .category-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loader"></div>
+            <div style="color: white; font-size: 1.2rem; font-weight: 500;">SOL-VOLT SA</div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <div class="logo-main">SOL-VOLT SA</div>
+                    <div class="logo-tagline">POWERING YOUR FUTURE</div>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#contact" class="cta-button">
+                        <i class="fas fa-bolt"></i>
+                        Get Quote
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animate__animated animate__fadeInUp">Premium Solar & Electrical Solutions</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                    Empowering South Africa's energy transition with certified components, professional compliance, and cutting-edge solar technology solutions.
+                </p>
+                <a href="#products" class="cta-button animate__animated animate__fadeInUp animate__delay-2s">
+                    <i class="fas fa-solar-panel"></i>
+                    Explore Products
+                </a>
+                
+                <div class="hero-stats animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-text">Certified Products</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-text">Delivery Promise</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-text">Compliance Guarantee</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="product-showcase">
+                    <div class="showcase-item animate__animated animate__zoomIn">
+                        <div class="showcase-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>DC Protection</h4>
+                        <p>Certified isolators & SPDs for system safety</p>
+                    </div>
+                    <div class="showcase-item animate__animated animate__zoomIn animate__delay-1s">
+                        <div class="showcase-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>System Interconnects</h4>
+                        <p>MC4 connectors & weatherproof solutions</p>
+                    </div>
+                    <div class="showcase-item animate__animated animate__zoomIn animate__delay-2s">
+                        <div class="showcase-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Mounting Systems</h4>
+                        <p>Professional installation frameworks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Product Range</span>
+                <h2>Comprehensive Component Solutions</h2>
+                <p>Specialized electrical and solar components for professional installations across South Africa</p>
+            </div>
+            
+            <div class="category-filter" id="categoryFilter">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-th"></i>
+                    All Products
+                </button>
+                <button class="category-btn" data-category="protection">
+                    <i class="fas fa-shield-alt"></i>
+                    Protection Gear
+                </button>
+                <button class="category-btn" data-category="interconnects">
+                    <i class="fas fa-plug"></i>
+                    System Interconnects
+                </button>
+                <button class="category-btn" data-category="compliance">
+                    <i class="fas fa-clipboard-check"></i>
+                    Compliance Infrastructure
+                </button>
+                <button class="category-btn" data-category="battery">
+                    <i class="fas fa-car-battery"></i>
+                    Battery Components
+                </button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Advantages</span>
+                <h2>Why Choose Sol-Volt SA</h2>
+                <p>Delivering excellence through specialized expertise and customer-focused solutions</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>SANS Certified Quality</h3>
+                    <p>All products meet SANS & IEC standards with verified certifications and comprehensive warranties</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Rapid Delivery Network</h3>
+                    <p>Same-day dispatch for critical components across Gauteng to prevent project delays</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Expert Technical Support</h3>
+                    <p>Technical guidance from certified professionals for optimal component selection and integration</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Full Compliance Assurance</h3>
+                    <p>Complete regulatory compliance with integrated COC certification path for seamless project completion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Customer Excellence</span>
+                <h2>Our Professional Commitment</h2>
+                <p>Showcasing our dedication to quality service and client satisfaction</p>
+            </div>
+            
+            <div class="gallery-description">
+                <p><strong>SOL-VOLT SA</strong> distinguishes itself through an unwavering commitment to customer care and professional excellence. We understand that successful solar installations require more than just quality components—they demand comprehensive support, technical expertise, and a partnership approach to every project.</p>
+                
+                <p>Our professional service philosophy encompasses <strong>100% commitment to customer satisfaction</strong>, from initial consultation through post-installation support. Each client receives personalized attention, with our certified technical team providing detailed system design assistance, compliance guidance, and ongoing maintenance recommendations. We maintain transparent communication throughout the procurement and implementation process, ensuring complete understanding and confidence in every component selection.</p>
+                
+                <p>Our professionalism extends to strict adherence to South African regulatory standards, with all installations designed to meet SANS 10142-1 and other relevant compliance requirements. We provide comprehensive documentation, certification pathways, and technical support to ensure your projects proceed smoothly from concept to completion.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://letopv.com/wp-content/uploads/2025/03/DC-Surge-Protection-Device.webp" 
+                    alt="DC Protection Components">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfv_G6BE82vcVctmacm3RY4GaIwnJnnxRXSQ&s" 
+                    alt="Solar Installation">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.agsdevices.com/wp-content/uploads/2024/08/types-of-circuits-hero-image.jpg" 
+                    alt="Electrical Components">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxIqEWBtetAZOU7I46rvgamLedS2Jy83I8nw&s"
+                     alt="Solar Technology">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRs7LgbTXLYRb6McHsA7VlCrDciJrBfEhzZg&s" 
+                    alt="Earthing Systems">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://kpa.io/wp-content/uploads/2022/08/iStock-1363808186-scaled-1.jpg" 
+                    alt="Battery Components">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.shopify.com/s/files/1/1268/5407/files/why-is-cable-management-important.jpg?v=1602014489" 
+                    alt="Cable Management">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://valsaeng.co.za/wp-content/uploads/2025/07/flat-concrete-ballast-mounting-system.webp"
+                     alt="Solar Mounting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Get In Touch</span>
+                <h2>Request Detailed Information</h2>
+                <p>Contact us for technical specifications, product catalogs, and project consultation</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Address</h3>
+                            <p>1764B Ralekwalo Street<br>Naledi, Soweto<br>South Africa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Direct Contact</h3>
+                            <p>+27 11 123 4567<br>info@solvoltsa.co.za<br>sales@solvoltsa.co.za</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Operations</h3>
+                            <p>Mon-Fri: 7:00 AM - 5:00 PM<br>Sat: 8:00 AM - 1:00 PM<br>Emergency: 24/7 Support</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form id="contactForm" action="https://formsubmit.co/mphohadipitso7@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact Form Submission - SOL-VOLT SA">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company / Organization</label>
+                                <input type="text" id="company" name="company" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productCategory">Product Interest *</label>
+                            <select id="productCategory" name="productCategory" class="form-control" required>
+                                <option value="">Select Product Category</option>
+                                <option value="protection">Protection Gear</option>
+                                <option value="interconnects">System Interconnects</option>
+                                <option value="compliance">Compliance Infrastructure</option>
+                                <option value="battery">Battery Components</option>
+                                <option value="mounting">Mounting Systems</option>
+                                <option value="monitoring">Monitoring Solutions</option>
+                                <option value="full-catalog">Full Product Catalog</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Requirements *</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Please describe your project scope, system requirements, or specific component needs..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Request Technical Information
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SOL-VOLT SA</h3>
+                <p>Empowering South Africa's energy transition with certified solar electrical components and professional compliance solutions.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#Sol-Volt SA">Sol-Volt SA</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Product Categories</h3>
+                <ul>
+                    <li><a href="#products">Protection Gear</a></li>
+                    <li><a href="#products">System Interconnects</a></li>
+                    <li><a href="#products">Compliance Infrastructure</a></li>
+                    <li><a href="#products">Battery Components</a></li>
+                    <li><a href="#products">Mounting Systems</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Certifications</h3>
+                <ul>
+                    <li><a href="#">SANS Compliant</a></li>
+                    <li><a href="#">ISO 9001:2015</a></li>
+                    <li><a href="#">B-BBEE Certified</a></li>
+                    <li><a href="#">IEC Standards</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sol-Volt SA (Pty) Ltd. All rights reserved. | Powering Your Future | Registration No: 2026/000177/07</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Modern JavaScript ES6+ Implementation
+        
+        // ====== PRODUCTS DATA (EXPANDED TO SHOW MORE PRODUCTS) ======
+        const products = [
+            {
+                id: 1,
+                name: "DC Isolators & Disconnects",
+                category: "protection",
+                description: "Certified DC isolators for safe disconnection of solar arrays with visible isolation gap and IP65 outdoor rating",
+                specs: ["1000VDC Rated", "SANS 10142-1 Compliant", "IP65 Outdoor Protection", "Visible Isolation Gap", "Thermal Overload Protection"],
+                image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "SANS Certified"
+            },
+            {
+                id: 2,
+                name: "Surge Protection Devices",
+                category: "protection",
+                description: "Type 1 & 2 SPDs for comprehensive protection against lightning strikes and voltage spikes in solar installations",
+                specs: ["Lightning Current Protection", "Remote Signaling Contact", "Thermal Disconnector", "Visual Status Indication", "High Energy Absorption"],
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTABjXx-JXUmKSTvv2kIm6EcafAMWvKAWstg&s",
+                certification: "IEC 61643 Certified"
+            },
+            {
+                id: 3,
+                name: "MC4 Connectors & Tooling",
+                category: "interconnects",
+                description: "High-quality MC4 connectors with tool-less installation capabilities for secure, weatherproof solar connections",
+                specs: ["IP67 Waterproof Rating", "UV Resistant Housing", "1000VDC/30A Capacity", "Tool-less Installation", "TUV Certified"],
+                image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "TUV Certified"
+            },
+            {
+                id: 4,
+                name: "Solar Cable & Gland Systems",
+                category: "interconnects",
+                description: "PV1-F certified solar cable with weatherproof glands for durable, long-lasting solar installations",
+                specs: ["TUV Certified PV1-F Cable", "Double Insulation", "Weather Resistant", "UV Protection", "Various Sizes Available"],
+                image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "SANS 10142 Compliant"
+            },
+            {
+                id: 5,
+                name: "Earthing & Lightning Systems",
+                category: "compliance",
+                description: "Complete earthing kits with copper-bonded rods and exothermic welding for comprehensive lightning protection",
+                specs: ["Copper-Bonded Earth Rods", "Exothermic Welding Kits", "SANS 62305 Compliant", "Lightning Conductor Systems", "Grounding Mats"],
+                image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT73KXV8wpxRuR6yBwj_HLEtVzrdfRZunTelg&s",
+                certification: "SANS 62305 Certified"
+            },
+            {
+                id: 6,
+                name: "Battery Cables & Busbars",
+                category: "battery",
+                description: "High-current battery cables with compression lugs and copper busbars for energy storage systems",
+                specs: ["Fine Strand Flexible Cable", "Tin-Plated Copper Lugs", "High Temperature Rating", "Oil Resistant", "Various AWG Sizes"],
+                image: "https://batteryfinds.com/wp-content/uploads/2022/01/LiFePO4-Battery-Busbars-Thick-Gauge-Cable-whos-the-best.jpg",
+                certification: "UL Listed"
+            },
+            {
+                id: 7,
+                name: "Cable Management Systems",
+                category: "compliance",
+                description: "Professional cable trays, conduits, and mounting systems for organized, code-compliant installations",
+                specs: ["UV Resistant Materials", "Corrosion Proof Coatings", "Easy Installation Design", "Various Configurations", "Fire Retardant"],
+                image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "SABS Approved"
+            },
+            {
+                id: 8,
+                name: "Solar Mounting Systems",
+                category: "mounting",
+                description: "Adjustable aluminum mounting systems for various roof types, carports, and ground installations",
+                specs: ["Aluminum Construction", "Wind Load Certified", "Adjustable Tilt Angles", "Easy Assembly", "Corrosion Resistant"],
+                image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "Structural Certified"
+            },
+            {
+                id: 9,
+                name: "Combiner Boxes & Enclosures",
+                category: "protection",
+                description: "Weatherproof combiner boxes with integrated string fusing and surge protection",
+                specs: ["IP65 Rated Enclosures", "Integrated String Fusing", "Surge Protection", "Monitoring Options", "Lockable Design"],
+                image: "https://lh6.googleusercontent.com/proxy/bSOWbVivCXEJZwVfE74Ujh3HUE_Po16wMNesQ9T-5-kjJWhq64uO6dOUeq_mKqk3ElVFWcY-UYbFs4JTrf-EDwX2mVYcgLu_2vBxtTuJPK4ilyJxAQ",
+                certification: "IP65 Certified"
+            },
+            {
+                id: 10,
+                name: "Monitoring & Control Systems",
+                category: "monitoring",
+                description: "Advanced energy monitoring solutions with cloud connectivity and real-time system analytics",
+                specs: ["Real-time Data Collection", "Cloud-based Reporting", "Mobile App Integration", "Performance Alerts", "Data Logging"],
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "CE Certified"
+            },
+            {
+                id: 11,
+                name: "Solar Panel Junction Boxes",
+                category: "interconnects",
+                description: "High-quality junction boxes for solar panels with bypass diodes and weatherproof sealing",
+                specs: ["IP68 Waterproof", "Bypass Diodes Included", "High Temperature Resistance", "Easy Installation", "TUV Certified"],
+                image: "https://www.shutterstock.com/image-photo/solar-junction-box-row-black-260nw-2141171941.jpg",
+                certification: "TUV Certified"
+            },
+            {
+                id: 12,
+                name: "Grid-Tie Inverters",
+                category: "compliance",
+                description: "Efficient grid-tie inverters with advanced monitoring and SANS compliant safety features",
+                specs: ["High Efficiency Rating", "Grid Synchronization", "Remote Monitoring", "Safety Disconnect", "Warranty Protected"],
+                image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                certification: "SANS Approved"
+            }
+        ];
+
+        // ====== APPLICATION STATE MANAGEMENT ======
+        class AppState {
+            static currentCategory = 'all';
+            static visitedProducts = new Set();
+            static formSubmissions = [];
+            static isLoading = true;
+            static userPreferences = {
+                darkMode: false,
+                currency: 'ZAR'
+            };
+            
+            static addVisitedProduct(productId) {
+                this.visitedProducts.add(productId);
+                this.saveToLocalStorage();
+            }
+            
+            static addFormSubmission(data) {
+                this.formSubmissions.push({
+                    ...data,
+                    timestamp: new Date().toISOString()
+                });
+                this.saveToLocalStorage();
+            }
+            
+            static saveToLocalStorage() {
+                try {
+                    localStorage.setItem('solvolt_state', JSON.stringify({
+                        visitedProducts: Array.from(this.visitedProducts),
+                        formSubmissions: this.formSubmissions,
+                        preferences: this.userPreferences
+                    }));
+                } catch (error) {
+                    console.warn('Local storage save failed:', error);
+                }
+            }
+            
+            static loadFromLocalStorage() {
+                try {
+                    const saved = JSON.parse(localStorage.getItem('solvolt_state'));
+                    if (saved) {
+                        this.visitedProducts = new Set(saved.visitedProducts || []);
+                        this.formSubmissions = saved.formSubmissions || [];
+                        this.userPreferences = saved.preferences || this.userPreferences;
+                    }
+                } catch (error) {
+                    console.warn('Local storage load failed:', error);
+                }
+            }
+        }
+
+        // ====== UTILITY FUNCTIONS ======
+        class Utilities {
+            static debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+
+            static throttle(func, limit) {
+                let inThrottle;
+                return function(...args) {
+                    if (!inThrottle) {
+                        func.apply(this, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                };
+            }
+
+            static animateElement(element, animation, callback = null) {
+                element.classList.add('animate__animated', `animate__${animation}`);
+                const handleAnimationEnd = () => {
+                    element.classList.remove('animate__animated', `animate__${animation}`);
+                    element.removeEventListener('animationend', handleAnimationEnd);
+                    if (callback) callback();
+                };
+                element.addEventListener('animationend', handleAnimationEnd);
+            }
+
+            static formatCategoryName(category) {
+                const names = {
+                    'protection': 'Protection Gear',
+                    'interconnects': 'System Interconnects',
+                    'compliance': 'Compliance Infrastructure',
+                    'battery': 'Battery Components',
+                    'mounting': 'Mounting Systems',
+                    'monitoring': 'Monitoring Solutions'
+                };
+                return names[category] || category;
+            }
+        }
+
+        // ====== DOM MANAGER CLASS ======
+        class DOMManager {
+            static elements = {
+                loadingOverlay: document.getElementById('loadingOverlay'),
+                header: document.getElementById('header'),
+                menuToggle: document.getElementById('menuToggle'),
+                navMenu: document.getElementById('navMenu'),
+                productsGrid: document.getElementById('productsGrid'),
+                categoryFilter: document.getElementById('categoryFilter'),
+                contactForm: document.getElementById('contactForm'),
+                backToTop: document.getElementById('backToTop')
+            };
+
+            static init() {
+                this.setupEventListeners();
+                this.renderProducts();
+                this.initParticles();
+                this.initTypedText();
+            }
+
+            static setupEventListeners() {
+                // Mobile Menu Toggle
+                this.elements.menuToggle.addEventListener('click', () => this.toggleMobileMenu());
+                
+                // Close mobile menu when clicking links
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => this.closeMobileMenu());
+                });
+
+                // Header scroll effect
+                window.addEventListener('scroll', Utilities.throttle(() => {
+                    this.elements.header.classList.toggle('scrolled', window.scrollY > 50);
+                }, 100));
+
+                // Back to Top button
+                this.elements.backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+
+                window.addEventListener('scroll', () => {
+                    this.elements.backToTop.classList.toggle('visible', window.scrollY > 300);
+                });
+
+                // Category Filter Buttons
+                this.elements.categoryFilter.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('category-btn')) {
+                        this.filterProducts(e.target.dataset.category);
+                    }
+                });
+
+                // Contact Form Submission (FormSubmit.co will handle the email)
+                this.elements.contactForm.addEventListener('submit', (e) => this.handleFormSubmit(e));
+
+                // Product Inquiry Buttons
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('action-button') || 
+                        e.target.closest('.action-button')) {
+                        this.handleProductInquiry(e);
+                    }
+                });
+
+                // Showcase item interactions
+                document.querySelectorAll('.showcase-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        this.scrollToProducts();
+                    });
+                });
+            }
+
+            static toggleMobileMenu() {
+                this.elements.menuToggle.classList.toggle('active');
+                this.elements.navMenu.classList.toggle('active');
+            }
+
+            static closeMobileMenu() {
+                this.elements.menuToggle.classList.remove('active');
+                this.elements.navMenu.classList.remove('active');
+            }
+
+            static scrollToProducts() {
+                document.getElementById('products').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            }
+
+            static filterProducts(category) {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.category === category) {
+                        btn.classList.add('active');
+                    }
+                });
+
+                AppState.currentCategory = category;
+                this.renderProducts();
+            }
+
+            static renderProducts() {
+                const filteredProducts = AppState.currentCategory === 'all' 
+                    ? products 
+                    : products.filter(p => p.category === AppState.currentCategory);
+
+                // Show more products (first 6)
+                const productsToShow = filteredProducts.slice(0, 12);
+
+                this.elements.productsGrid.innerHTML = productsToShow.map(product => `
+                    <div class="product-card" data-product-id="${product.id}">
+                        <div class="card-header">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/350x200/0039A6/ffffff?text=Solar+Component'">
+                            <span class="product-category">${Utilities.formatCategoryName(product.category)}</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <ul class="product-specs">
+                                ${product.specs.map(spec => `
+                                    <li><i class="fas fa-check"></i> ${spec}</li>
+                                `).join('')}
+                            </ul>
+                            <div class="product-actions">
+                                <div class="certification-badge">
+                                    <i class="fas fa-certificate"></i>
+                                    ${product.certification}
+                                </div>
+                                <button class="action-button" data-product-id="${product.id}">
+                                    <i class="fas fa-info-circle"></i>
+                                    Request Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Add intersection observer for animations
+                this.observeProductCards();
+            }
+
+            static observeProductCards() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.product-card').forEach(card => {
+                    observer.observe(card);
+                });
+            }
+
+            static initParticles() {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#FF6B35" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.5, random: true },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#0039A6",
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: "none",
+                            random: false,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "repulse" },
+                            onclick: { enable: true, mode: "push" }
+                        }
+                    }
+                });
+            }
+
+            static initTypedText() {
+                new Typed('.hero-text h1', {
+                    strings: ['Premium Solar Solutions', 'Certified Electrical Components', 'Professional Compliance'],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    backDelay: 2000,
+                    startDelay: 1000,
+                    loop: true
+                });
+            }
+
+            static async handleFormSubmit(e) {
+                // FormSubmit.co will handle the actual submission
+                // We'll keep the animation for user feedback
+                
+                // Show loading state
+                const submitBtn = e.target.querySelector('.submit-button');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                try {
+                    // Simulate processing time
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Show success animation
+                    Utilities.animateElement(e.target, 'bounce');
+                    
+                    // Show confetti effect
+                    confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                    
+                    // FormSubmit.co will handle the actual submission
+                    // Keep the form action to your email
+                    console.log('Form submitted to: mphohadipitso7@gmail.com');
+                    
+                    // You can also add additional JavaScript form handling here
+                    // using Fetch API if needed
+                    
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    alert('There was an error submitting your form. Please try again or contact us directly.');
+                } finally {
+                    // Reset button after form submission
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            }
+
+            static handleProductInquiry(e) {
+                const button = e.target.closest('.action-button');
+                const productId = button.dataset.productId;
+                const product = products.find(p => p.id == productId);
+                
+                if (product) {
+                    AppState.addVisitedProduct(productId);
+                    
+                    // Animate the product card
+                    const productCard = button.closest('.product-card');
+                    Utilities.animateElement(productCard, 'pulse');
+                    
+                    // Show inquiry modal
+                    setTimeout(() => {
+                        const modalContent = `
+                            <strong>${product.name}</strong><br><br>
+                            ${product.description}<br><br>
+                            <strong>Key Specifications:</strong><br>
+                            ${product.specs.map(spec => `• ${spec}`).join('<br>')}<br><br>
+                            <strong>Certification:</strong> ${product.certification}
+                        `;
+                        
+                        if (confirm(`Request detailed information for:\n\n${product.name}\n\nClick OK to proceed to our contact form.`)) {
+                            document.getElementById('contact').scrollIntoView({ 
+                                behavior: 'smooth' 
+                            });
+                            
+                            // Pre-fill the product category
+                            const categorySelect = document.getElementById('productCategory');
+                            categorySelect.value = product.category;
+                            
+                            // Add product name to message
+                            const messageTextarea = document.getElementById('message');
+                            messageTextarea.value = `Interested in: ${product.name}\n\nProject Details: `;
+                            messageTextarea.focus();
+                        }
+                    }, 300);
+                }
+            }
+        }
+
+        // ====== LOADING MANAGER ======
+        class LoadingManager {
+            static init() {
+                // Load saved state
+                AppState.loadFromLocalStorage();
+                
+                // Simulate loading time
+                setTimeout(() => {
+                    this.hideLoading();
+                }, 1000);
+            }
+
+            static hideLoading() {
+                DOMManager.elements.loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    DOMManager.elements.loadingOverlay.style.display = 'none';
+                    AppState.isLoading = false;
+                }, 500);
+            }
+        }
+
+        // ====== PERFORMANCE OPTIMIZATIONS ======
+        class PerformanceOptimizer {
+            static init() {
+                this.setupImageLazyLoading();
+                this.optimizeAnimations();
+            }
+
+            static setupImageLazyLoading() {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.dataset.src) {
+                                img.src = img.dataset.src;
+                            }
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+
+                images.forEach(img => {
+                    if (!img.dataset.src) {
+                        img.dataset.src = img.src;
+                    }
+                    imageObserver.observe(img);
+                });
+            }
+
+            static optimizeAnimations() {
+                // Use will-change for smooth animations
+                document.querySelectorAll('.product-card, .feature-card').forEach(el => {
+                    el.style.willChange = 'transform, opacity';
+                });
+            }
+        }
+
+        // ====== APPLICATION INITIALIZATION ======
+        class Application {
+            static async init() {
+                try {
+                    // Initialize in sequence
+                    LoadingManager.init();
+                    PerformanceOptimizer.init();
+                    
+                    // Wait for DOM to be ready
+                    if (document.readyState === 'loading') {
+                        await new Promise(resolve => {
+                            document.addEventListener('DOMContentLoaded', resolve);
+                        });
+                    }
+                    
+                    // Initialize DOM Manager
+                    DOMManager.init();
+                    
+                    // Log successful initialization
+                    console.log('🚀 SOL-VOLT SA Website Initialized');
+                    console.log('📊 Total Products:', products.length);
+                    console.log('📧 Contact Form will send to: mphohadipitso7@gmail.com');
+                    console.log('🎯 Current Category:', AppState.currentCategory);
+                    
+                } catch (error) {
+                    console.error('Application initialization error:', error);
+                    // Graceful error handling
+                    DOMManager.elements.loadingOverlay.innerHTML = `
+                        <div style="color: white; text-align: center;">
+                            <h3>Loading Error</h3>
+                            <p>Please refresh the page or contact support if the issue persists.</p>
+                            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Refresh Page
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // ====== START APPLICATION ======
+        Application.init();
+
+        // ====== GLOBAL ERROR HANDLING ======
+        window.addEventListener('error', (event) => {
+            console.error('Global error:', event.error);
+        });
+    </script>
+</body>
+</html>
